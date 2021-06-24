@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="$lang$">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+$for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+$endfor$
+    <title>$pagetitle$$if(title-suffix)$ - $title-suffix$$endif$</title>
+    <link rel="stylesheet" href="styles/clown-konrad.css">
+</head>
+<body>
+
+    <header>Clown Konrad</header>
+
+    <nav>
+        <!-- pure html/css burger navigation -->
+        <label id="burger-label" for="burger">≡</label>
+        <input id="burger" type="checkbox">
+
+        <!-- actual navigation -->
+        <ul id="nav-items">
+        $^$$for(navigation)$
+            <li class="nav-item"><a href="$it.url$">$it.text$</a></li>
+        $endfor$
+        </ul>
+    </nav>
+
+    <main>
+
+        $^$$body$
+
+    </main>
+
+    <footer>&copy; $author$</footer>
+
+</body>
+</html>

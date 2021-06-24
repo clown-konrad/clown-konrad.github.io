@@ -1,0 +1,15 @@
+lang: de
+title-suffix: Clown Konrad
+author:
+    - Michael Westermeier, Münster
+navigation:
+    - text: Clown Konrad
+      url: index.html
+    - text: Walk Acts
+      url: walk_acts.html
+    - text: Wer ich bin
+      url: michael_westermeier.html
+    - text: Links
+      url: links.html
+    - text: Kontakt
+      url: kontakt.html
