@@ -1,16 +1,12 @@
 name: Build website
 
 on: push
-#on:
-#  push:
-#    branches:
-#      - main
 
 env:
   OUTPUT_DIR: pandoc-output
 
 jobs:
-  build_static_website:
+  build:
     runs-on: ubuntu-20.04
     container:
       image: docker://pandoc/core:2.14
@@ -32,8 +28,19 @@ jobs:
           path: ${{ env.OUTPUT_DIR }}
           name: website
 
+  deploy:
+    needs: build
+    if: success() && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Load generated content
+        uses: actions/download-artifact@v2
+        with:
+          name: website
+          path: ${{ env.OUTPUT_DIR }}
+
       - name: Deploy to GitHub Pages
-        if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
