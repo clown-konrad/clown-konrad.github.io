@@ -1,0 +1,45 @@
+name: Build website
+
+on: push
+#on:
+#  push:
+#    branches:
+#      - main
+
+jobs:
+  build_static_website:
+    runs-on: ubuntu-20.04
+    container:
+      image: docker://pandoc/core:2.14
+      options: --entrypoint=sh
+    steps:
+
+      - name: Install dependencies
+        run: apk add make git
+
+      - name: Checkout repository content
+        uses: actions/checkout@v2
+
+      - name: Copy static content
+        run: |
+          mkdir -p output
+          cp -r media output/
+          cp -r styles output/
+          cp -r fonts output/
+
+      - name: Convert via pandoc
+        run: |
+          ls -1 content | grep .md | sed 's/.md//' | xargs -n 1 -I NAME \
+            pandoc \
+              --standalone \
+              --to=html \
+              --template=template.html \
+              --metadata-file=metadata.yml \
+              --output=output/NAME.html \
+              content/NAME.md
+
+      - name: Upload generated content
+        uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: output
