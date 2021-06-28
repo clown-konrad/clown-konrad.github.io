@@ -20,29 +20,16 @@ jobs:
       - name: Checkout repository content
         uses: actions/checkout@v2
 
-      - name: Copy static content
-        run: |
-          mkdir -p output
-          cp -r media output/
-          cp -r styles output/
-          cp -r fonts output/
-
       - name: Convert via pandoc
-        run: |
-          ls -1 content | grep .md | sed 's/.md//' | xargs -n 1 -I NAME \
-            pandoc \
-              --standalone \
-              --to=html \
-              --template=template.html \
-              --metadata-file=metadata.yml \
-              --output=output/NAME.html \
-              content/NAME.md
+        run: make
+        env:
+          OUTPUT_DIR: pandoc-output
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: output
+          build_dir: pandoc-output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
