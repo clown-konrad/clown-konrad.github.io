@@ -38,8 +38,11 @@ jobs:
               --output=output/NAME.html \
               content/NAME.md
 
-      - name: Upload generated content
-        uses: actions/upload-artifact@v2
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-          name: website
-          path: output
+          target_branch: gh-pages
+          build_dir: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
