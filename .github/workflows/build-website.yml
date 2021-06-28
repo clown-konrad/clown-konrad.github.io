@@ -26,6 +26,12 @@ jobs:
       - name: Convert via pandoc
         run: make
 
+      - name: Store generated content
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ env.OUTPUT_DIR }}
+          name: website
+
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
