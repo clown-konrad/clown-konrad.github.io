@@ -6,6 +6,9 @@ on: push
 #    branches:
 #      - main
 
+env:
+  OUTPUT_DIR: pandoc-output
+
 jobs:
   build_static_website:
     runs-on: ubuntu-20.04
@@ -22,14 +25,12 @@ jobs:
 
       - name: Convert via pandoc
         run: make
-        env:
-          OUTPUT_DIR: pandoc-output
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: pandoc-output
+          build_dir: ${{ env.OUTPUT_DIR }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
