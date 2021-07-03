@@ -3,7 +3,7 @@
 # Output directory, can be overridden by environment
 OUTPUT_DIR ?= output
 
-html:
+html: clean
 	mkdir -p $(OUTPUT_DIR)
 	cp -r media $(OUTPUT_DIR)/
 	cp -r styles $(OUTPUT_DIR)/
