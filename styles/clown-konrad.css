@@ -76,6 +76,9 @@ nav .nav-item a {
 nav a:hover, nav a:active, nav a:focus {
     color: var(--color-verydark) !important;
 }
+nav .active {
+    color: var(--color-verydark) !important;
+}
 
 /* responsive navigation */
 nav #burger-label, nav #burger { display: none }
