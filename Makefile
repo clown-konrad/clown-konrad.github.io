@@ -23,8 +23,10 @@ pandoc: $(OUTPUT_DIR)
 			--output=$(OUTPUT_DIR)/NAME.html \
 			content/NAME.md
 
-finish: pandoc
-	echo "TODO"
+finish: static pandoc
+	ls -1 content | grep .md | sed 's/.md//' | xargs -n 1 -I NAME \
+		sed -i 's/<a href="NAME.html">\([^<]*\)<\/a>/<strong class="active">\1<\/strong>/' \
+			$(OUTPUT_DIR)/NAME.html
 
 clean:
 	rm -rf $(OUTPUT_DIR)/fonts
