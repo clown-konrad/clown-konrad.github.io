@@ -1,35 +1,33 @@
-.PHONY: all static pandoc finish clean
-
-# Output directory, can be overridden by environment
+CONTENT_DIR ?= content
 OUTPUT_DIR ?= output
+STATICS := media styles fonts
 
-all: clean finish
+CONTENT_FILES := $(wildcard $(CONTENT_DIR)/*.md)
+CONTENT_OUTPUT := $(patsubst $(CONTENT_DIR)/%.md,$(OUTPUT_DIR)/%.html, $(CONTENT_FILES))
+STATIC_OUTPUT := $(patsubst %,$(OUTPUT_DIR)/%, $(STATICS))
+
+.PHONY: all
+all: clean $(CONTENT_OUTPUT) $(STATIC_OUTPUT)
 
 $(OUTPUT_DIR):
 	mkdir -p $(OUTPUT_DIR)
 
-static: $(OUTPUT_DIR)
-	cp -r media $(OUTPUT_DIR)/
-	cp -r styles $(OUTPUT_DIR)/
-	cp -r fonts $(OUTPUT_DIR)/
+$(OUTPUT_DIR)/%-pandoc.html: $(CONTENT_DIR)/%.md $(OUTPUT_DIR)
+	pandoc \
+		--standalone \
+		--to=html \
+		--template=template.html \
+		--metadata-file=metadata.yml \
+		--output=$@ \
+		$<
 
-pandoc: $(OUTPUT_DIR)
-	ls -1 content | grep .md | sed 's/.md//' | xargs -n 1 -I NAME \
-		pandoc \
-			--standalone \
-			--to=html \
-			--template=template.html \
-			--metadata-file=metadata.yml \
-			--output=$(OUTPUT_DIR)/NAME.html \
-			content/NAME.md
+$(OUTPUT_DIR)/%.html: $(OUTPUT_DIR)/%-pandoc.html $(OUTPUT_DIR)
+	sed 's/<a href="$*.html">\([^<]*\)<\/a>/<strong class="active">\1<\/strong>/' \
+		$< > $@
 
-finish: static pandoc
-	ls -1 content | grep .md | sed 's/.md//' | xargs -n 1 -I NAME \
-		sed -i 's/<a href="NAME.html">\([^<]*\)<\/a>/<strong class="active">\1<\/strong>/' \
-			$(OUTPUT_DIR)/NAME.html
+$(OUTPUT_DIR)/%: % $(OUTPUT_DIR)
+	cp -r $< $@
 
+.PHONY: clean
 clean:
-	rm -rf $(OUTPUT_DIR)/fonts
-	rm -rf $(OUTPUT_DIR)/media
-	rm -rf $(OUTPUT_DIR)/styles
-	rm -rf $(OUTPUT_DIR)/*.html
+	rm -rf $(OUTPUT_DIR)
