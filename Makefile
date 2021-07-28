@@ -15,13 +15,13 @@ static: $(OUTPUT_DIR)
 
 pandoc: $(OUTPUT_DIR)
 	ls -1 content | grep .md | sed 's/.md//' | xargs -n 1 -I NAME \
-	    pandoc \
-	        --standalone \
-	        --to=html \
-	        --template=template.html \
-	        --metadata-file=metadata.yml \
-	        --output=$(OUTPUT_DIR)/NAME.html \
-	        content/NAME.md
+		pandoc \
+			--standalone \
+			--to=html \
+			--template=template.html \
+			--metadata-file=metadata.yml \
+			--output=$(OUTPUT_DIR)/NAME.html \
+			content/NAME.md
 
 finish: pandoc
 	echo "TODO"
