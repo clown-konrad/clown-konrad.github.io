@@ -10,6 +10,8 @@ Ein Walk-Act ist das improvisierte Spiel mittendrin. Das kann bei Festen oder Ge
 
 ## Wilhelm malt
 
+![](media/willem.png)
+
 Wilhelm malt draußen in der Natur, in der Stadt, im Park, überall dort wo er Menschen treffen kann. Er malt und zeichnet auf Pappe mit bunten Stiften. Und er verschenkt gerne seine Bilder, die er inspiriert durch den Kontakt mit Menschen immer wieder neu malt.
 
 ---

@@ -4,6 +4,8 @@ title: Michael Westermeier
 
 # Clown Konrad ist *Michael Westermeier*
 
+![](media/privat.png)
+
 - **geboren 1953**
     - Diplom Designer & Comiczeichner
     - Ausbildung als Kunsttherapeut

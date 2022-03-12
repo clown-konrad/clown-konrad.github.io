@@ -4,6 +4,8 @@ title: Clown Konrad
 
 # Herzlich willkommen!
 
+![](media/kinder.png)
+
 Schön, dass Sie auf meiner Seite gelandet sind! Hier finden Sie Informationen zu meiner Arbeit als Clown und etwas über mich persönlich.
 
 Meistens bin ich als Klinik-Clown in verschiedensten Einrichtungen unterwegs: Kinderkliniken, Altenheime und psychiatrische Einrichtungen, vornehmlich in Nordrhein-Westfalen, werden von mir allein oder zusammen mit meinen Partnern besucht.
@@ -11,6 +13,8 @@ Meistens bin ich als Klinik-Clown in verschiedensten Einrichtungen unterwegs: Ki
 ---
 
 ## In der Kinderklinik
+
+![](media/ballon.png)
 
 Der Clown in der Kinderklinik hat eine ganz besondere Rolle: er gehört weder zur Familie, noch zum Pflegepersonal. Als Clown bin ich Verbündeter und Freund der Kinder. Der Clown klopft an: "Darf ich reinkommen?", meistens dürfen wir. Was dann kommt, wissen wir vorher auch nicht. Es wird kein festes Programm gespielt, wir lassen uns selber überraschen, was passiert.
 

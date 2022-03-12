@@ -16,6 +16,8 @@ E-Mail: [mail@clown-konrad.de](mailto:mail@clown-konrad.de)
 
 ## Datenschutz
 
+![](media/ballon.png)
+
 **Auf meiner Website erhebe ich keinerlei Daten**. Ich setze keine Cookies ein, es gibt keinen Newsletter, kein Tracking und auch sonst keine eingebundenen Medien. Ich weiß gar nicht, dass Sie da sind!
 
 Lediglich mein Webhoster - *GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, Vereinigte Staaten von Amerika* - erhebt temporär die für den Betrieb notwendigen technischen Zugriffsdaten, zertifiziert [konform zum *EU-US-Privacy-Shield*][gh-p-eu-us]. Siehe dazu das [GitHub Privacy Statement][gh-p-statement] und die [GitHub Global Privacy Practices][gh-p-practices].

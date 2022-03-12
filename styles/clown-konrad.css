@@ -27,6 +27,16 @@ main ol li { list-style: decimal outside }
 main ul li { list-style: square outside }
 code { font-family: monospace; color: var(--color-dark) }
 
+/* nice horizontal rules */
+hr {
+    margin: 2em 0;
+    height: .3em;
+    background-image: url("../media/header_bg.png");
+    background-size: cover;
+    border: none;
+    clear: both;
+}
+
 /* vertical sections */
 body { min-height: 100vh; display: flex; flex-flow: column }
 header, nav, footer { flex: 0 }
@@ -110,6 +120,19 @@ nav #burger-label, nav #burger { display: none }
 /* main content */
 main {
     padding-top: 0;
+}
+
+/* images in main content */
+main img {
+    float: right;
+    margin: 0 0 1.5em 1.5em;
+    width: 33%;
+}
+@media (max-width: 42rem) {
+    main img { width: 50% }
+}
+@media (max-width: 24rem) {
+    main img { float: none; width: 100%; margin: 0 }
 }
 
 /* footer */
