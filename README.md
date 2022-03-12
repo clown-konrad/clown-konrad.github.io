@@ -6,6 +6,6 @@ Website content for clown-konrad.de
 
 ## Copyright and license
 
-(c) 2021 Michael Westermeier, Mirko Westermeier
+(c) 2021-2022 Michael Westermeier, Mirko Westermeier
 
 All rights reserved. See [LICENSE.txt](LICENSE.txt) for details.
