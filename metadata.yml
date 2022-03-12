@@ -1,5 +1,8 @@
 lang: de
 title-suffix: Clown Konrad
+header:
+    claim: Clown Konrad
+    sub-claim: Klinikclown, Walkacts, mit Milch bitte.
 author:
     - Michael Westermeier, Münster
 navigation:
