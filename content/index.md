@@ -4,7 +4,7 @@ title: Clown Konrad
 
 # Herzlich willkommen!
 
-Schön, dass Sie auf meiner Seite gelandet sind! Hier finden Sie Informationen zu meiner Arbeit als Clown, Fotos und etwas über mich persönlich.
+Schön, dass Sie auf meiner Seite gelandet sind! Hier finden Sie Informationen zu meiner Arbeit als Clown und etwas über mich persönlich.
 
 Meistens bin ich als Klinik-Clown in verschiedensten Einrichtungen unterwegs: Kinderkliniken, Altenheime und psychiatrische Einrichtungen, vornehmlich in Nordrhein-Westfalen, werden von mir allein oder zusammen mit meinen Partnern besucht.
 
