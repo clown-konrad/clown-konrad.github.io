@@ -1,0 +1,42 @@
+:root {
+
+    /* very light */
+    --color-verylight-r: 255;
+    --color-verylight-g: 255;
+    --color-verylight-b: 255;
+    --color-verylight: rgb(
+        var(--color-verylight-r),
+        var(--color-verylight-g),
+        var(--color-verylight-b)
+    );
+
+    /* light */
+    --color-light-r: 246;
+    --color-light-g: 239;
+    --color-light-b: 213;
+    --color-light: rgb(
+        var(--color-light-r),
+        var(--color-light-g),
+        var(--color-light-b)
+    );
+
+    /* primary */
+    --color-primary-r: 128;
+    --color-primary-g: 0;
+    --color-primary-b: 0;
+    --color-primary: rgb(
+        var(--color-primary-r),
+        var(--color-primary-g),
+        var(--color-primary-b)
+    );
+
+    /* very dark */
+    --color-verydark-r: 0;
+    --color-verydark-g: 0;
+    --color-verydark-b: 0;
+    --color-verydark: rgb(
+        var(--color-verydark-r),
+        var(--color-verydark-g),
+        var(--color-verydark-b)
+    );
+}

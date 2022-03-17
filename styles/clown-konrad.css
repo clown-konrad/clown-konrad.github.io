@@ -1,0 +1,143 @@
+/* normalize */
+@import url('reset.css');
+
+/* colors */
+@import url('colors.css');
+
+/* general colors */
+body { background-color: var(--color-primary); color: var(--color-verydark) }
+h1 { color: var(--color-primary) }
+a:link, a:visited { color: inherit }
+
+/* typography */
+@import url('atkinson-hyperlegible.css');
+body { font-family: 'Atkinson Hyperlegible', sans-serif }
+main, footer { line-height: 1.5em }
+strong { font-weight: bold }
+em { font-style: italic }
+h1 { font-size: 2em }
+h2 { font-size: 1.5em }
+h3 { font-size: 1.2em; font-weight: bold }
+h4 { font-size: 1em; font-weight: bold }
+h1, h2, h3, h4, h5, h6 { margin: 1.5em 0 .6em; line-height: 1.3em }
+p { margin: 1em 0 }
+main ol, main ul { margin-left: 1.5em }
+main li { display: list-item }
+main ol li { list-style: decimal outside }
+main ul li { list-style: square outside }
+code { font-family: monospace; color: var(--color-dark) }
+
+/* nice horizontal rules */
+hr {
+    margin: 2em 0;
+    height: .3em;
+    background-image: url("../media/header_bg.png");
+    background-size: cover;
+    border: none;
+    clear: both;
+}
+
+/* vertical sections */
+body { min-height: 100vh; display: flex; flex-flow: column }
+header, nav, footer { flex: 0 }
+main { flex: 1 }
+
+/* horizontal sections */
+body > * {
+    width: calc(100% - 6rem);
+    max-width: calc(42rem + 10vw);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 3rem;
+    background-color: var(--color-light);
+}
+@media (max-width: 42rem) {
+    body > * { width: calc(100% - 4rem); padding-left: 2rem; padding-right: 2rem }
+}
+@media (max-width: 30rem) {
+    body > * { width: calc(100% - 2rem); padding-left: 1rem; padding-right: 1rem }
+}
+
+/* header */
+header {
+    background-image: url("../media/header_bg.png");
+    background-size: cover;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+header #claim p, header #subclaim p {
+    margin: .2em 4rem;
+    padding: .15em 1rem;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.85)
+}
+header #claim { font-size: 2.5em }
+header #subclaim { font-size: 1.4em }
+@media (max-width: 42rem) {
+    header { padding-top: .7rem; padding-bottom: .7rem }
+    header #claim p, header #subclaim p { margin: .2em 0 }
+}
+
+/* navigation */
+nav { background: var(--color-verylight); }
+nav * { color: var(--color-primary) !important; }
+nav {
+    font-size: 1.1em;
+}
+nav #nav-items {
+    display: flex;
+    flex-flow: row;
+    gap: 1.5em;
+}
+nav .nav-item a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+}
+nav a:hover, nav a:active, nav a:focus {
+    color: var(--color-verydark) !important;
+}
+nav .active {
+    color: var(--color-verydark) !important;
+}
+
+/* responsive navigation */
+nav #burger-label, nav #burger { display: none }
+@media (max-width: 42rem) {
+    nav { padding-top: .5em; padding-bottom: .5em }
+    nav #nav-items { display: none }
+    nav #burger-label {
+        display: inline-block;
+        width: 100%;
+        font-size: 1.8em;
+    }
+    nav .nav-item {
+        margin: .7em 0;
+    }
+    nav #burger:checked ~ #nav-items { display: block; }
+}
+
+/* main content */
+main {
+    padding-top: 0;
+}
+
+/* images in main content */
+main img {
+    float: right;
+    margin: 0 0 1.5em 1.5em;
+    width: 33%;
+}
+@media (max-width: 42rem) {
+    main img { width: 50% }
+}
+@media (max-width: 24rem) {
+    main img { float: none; width: 100%; margin: 0 }
+}
+
+/* footer */
+footer {
+    padding-bottom: 2em;
+    background-color: var(--color-primary);
+    color: var(--color-verylight);
+}
