@@ -7,17 +7,17 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
-      image: docker://pandoc/core:2.14
+      image: docker://pandoc/core:3.6-ubuntu
       options: --entrypoint=sh
     steps:
 
       - name: Install dependencies
-        run: apk add make git
+        run: apt update && apt install -y git make
 
       - name: Checkout repository content
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Convert via pandoc
         run: make
@@ -26,28 +26,23 @@ jobs:
         run: |
           (test -f CNAME && cp CNAME ${{ env.OUTPUT_DIR }}) || echo "CNAME not there yet"
 
-      - name: Store generated content
-        uses: actions/upload-artifact@v2
+      - name: Upload as artifact for GH pages
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.OUTPUT_DIR }}
-          name: website
 
   deploy:
     needs: build
     if: success() && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-
-      - name: Load generated content
-        uses: actions/download-artifact@v2
-        with:
-          name: website
-          path: ${{ env.OUTPUT_DIR }}
-
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: gh-pages
-          build_dir: ${{ env.OUTPUT_DIR }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: deployment
+        uses: actions/deploy-pages@v4
