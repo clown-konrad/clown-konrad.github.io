@@ -18,6 +18,7 @@ $(OUTPUT_DIR)/%-pandoc.html: $(CONTENT_DIR)/%.md $(OUTPUT_DIR)
 		--to=html \
 		--template=template.html \
 		--metadata-file=metadata.yml \
+		--wrap=none \
 		--output=$@ \
 		$<
 
