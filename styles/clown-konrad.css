@@ -27,6 +27,9 @@ main ol li { list-style: decimal outside }
 main ul li { list-style: square outside }
 code { font-family: monospace; color: var(--color-dark) }
 
+/* headings as anchors with more space for sticky navigation */
+h1, h2, h3, h4, h5, h6 { scroll-margin-top: 4.5rem }
+
 /* nice horizontal rules */
 hr {
     margin: 2em 0;
@@ -83,6 +86,10 @@ nav { background: var(--color-verylight); }
 nav * { color: var(--color-primary) !important; }
 nav {
     font-size: 1.1em;
+}
+nav {
+    position: sticky;
+    top: 0;
 }
 nav #nav-items {
     display: flex;
