@@ -22,10 +22,8 @@ E-Mail: [clown-konrad@email.de](mailto:clown-konrad@email.de)
 
 **Auf meiner Website erhebe ich keinerlei Daten**. Ich setze keine Cookies ein, es gibt keinen Newsletter, kein Tracking und auch sonst keine eingebundenen Medien. Ich weiß gar nicht, dass Sie da sind!
 
-Lediglich mein Webhoster - *GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, Vereinigte Staaten von Amerika* - erhebt temporär die für den Betrieb notwendigen technischen Zugriffsdaten, zertifiziert [konform zum *EU-US-Privacy-Shield*][gh-p-eu-us]. Siehe dazu das [GitHub Privacy Statement][gh-p-statement] und die [GitHub Global Privacy Practices][gh-p-practices].
+Die Website wird über *GitHub Pages* gehostet. Beim Aufruf werden durch GitHub, Inc., USA, technisch notwendige Zugriffsdaten (z. B. IP-Adresse) verarbeitet. Die Datenübermittlung erfolgt auf Grundlage von *Standardvertragsklauseln der EU-Kommission (Art. 46 DSGVO)*. Weitere Informationen finden sich in der [Datenschutzerklärung von GitHub][gh-p-statement].
 
-[gh-p-eu-us]: https://www.privacyshield.gov/participant?id=a2zt000000001K2AAI&status=Active
-[gh-p-statement]: https://docs.github.com/en/github/site-policy/github-privacy-statement
-[gh-p-practices]: https://help.github.com/articles/global-privacy-practices/
+[gh-p-statement]: https://docs.github.com/de/github/site-policy/github-privacy-statement
 
 Da ich juristischer Laie bin, kann ich nicht sicher sagen, ob diese Kurzerklärung voll ausreichend ist. Hier finden Sie daher noch eine **[ausführliche Datenschutzerklärung](ausfuehrliche_datenschutzerklaerung.html)**.
